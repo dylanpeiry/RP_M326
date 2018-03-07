@@ -1,0 +1,11 @@
+C:\Users\peiryd_info\Desktop\M326\JustePrix\bin\Debug\JustePrix.exe.config
+C:\Users\peiryd_info\Desktop\M326\JustePrix\bin\Debug\JustePrix.exe
+C:\Users\peiryd_info\Desktop\M326\JustePrix\bin\Debug\JustePrix.pdb
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.csprojResolveAssemblyReference.cache
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.Properties.Resources.resources
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.csproj.GenerateResource.Cache
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.exe
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.pdb
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.RPMainView.resources
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.RPAddItemView.resources
+C:\Users\peiryd_info\Desktop\M326\JustePrix\obj\Debug\JustePrix.RPGameView.resources
