@@ -42,7 +42,9 @@
             this.tbxPriceEstimated.Name = "tbxPriceEstimated";
             this.tbxPriceEstimated.Size = new System.Drawing.Size(150, 23);
             this.tbxPriceEstimated.TabIndex = 0;
+            this.tbxPriceEstimated.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbxPriceEstimated.TextChanged += new System.EventHandler(this.tbxPriceEstimated_TextChanged);
+            this.tbxPriceEstimated.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPriceEstimated_KeyPress);
             // 
             // btnValidate
             // 

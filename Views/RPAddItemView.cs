@@ -32,13 +32,22 @@ namespace JustePrix
             string name = tbxName.Text;
             int price = Convert.ToInt32(tbxPrice.Text);
             Controller.AddItem(name, price);
-            if (cbxAddMore.Checked) {
+            if (cbxAddMore.Checked)
+            {
                 tbxName.Clear();
                 tbxPrice.Clear();
             }
             else
             {
                 this.Close();
+            }
+        }
+
+        private void tbxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -13,11 +13,12 @@ namespace JustePrix
     public partial class RPGameView : Form
     {
         private RPController _controller;
+        private RPMainView _frm;
         private int _attempts;
         public RPController Controller { get => _controller; set => _controller = value; }
         public int Attempts { get => _attempts; set => _attempts = value; }
 
-        public RPGameView(RPController controller)
+        public RPGameView(RPController controller,RPMainView frm)
         {
             InitializeComponent();
             Controller = controller;
@@ -26,6 +27,7 @@ namespace JustePrix
             lblItemToEvaluate.Text = Controller.CurrentItem.Name;
             lblResult.Text = String.Empty;
             lblAttempts.Text = String.Format("{0} essais", Attempts);
+            _frm = frm;
         }
 
         private void tbxPriceEstimated_TextChanged(object sender, EventArgs e)
@@ -43,18 +45,34 @@ namespace JustePrix
                     lblResult.Text = "Juste prix";
                     btnValidate.Enabled = false;
                     tbxPriceEstimated.Enabled = false;
-                    Controller.AddScore()
+                    Controller.AddScore(Controller.CurrentPlayer, Attempts, DateTime.Now);
+                    _frm.UpdateView();
+                    ShowWinMessage();
                     break;
                 case 1:
                     lblResult.Text = "Supérieur";
-                    Attempts++;
                     break;
                 case -1:
                     lblResult.Text = "Inférieur";
-                    Attempts++;
                     break;
             }
+            Attempts++;
             lblAttempts.Text = String.Format("{0} essai(s)", Attempts);
+        }
+
+        private void tbxPriceEstimated_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void ShowWinMessage()
+        {
+            if (MessageBox.Show(String.Format("Bravo {0}, vous avez réussi en {1} essai(s). Cliquez sur OK pour continuer.", Controller.CurrentPlayer.Name, Attempts), "Vous avez trouvé le Juste Prix !", MessageBoxButtons.OK) == DialogResult.OK)
+            {
+                Close();
+            }
         }
     }
 }

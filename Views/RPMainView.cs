@@ -19,23 +19,43 @@ namespace JustePrix
         {
             InitializeComponent();
             Controller = new RPController();
+            UpdateView();
         }
 
         private void btnAddItems_Click(object sender, EventArgs e)
         {
+            Controller.CurrentPlayer = new RPPlayer(tbxPlayerName.Text);
             RPAddItemView _view = new RPAddItemView(Controller);
             _view.ShowDialog();
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            RPGameView _view = new RPGameView(Controller);
+            Controller.CurrentPlayer = new RPPlayer(tbxPlayerName.Text);
+            RPGameView _view = new RPGameView(Controller,this);
             _view.ShowDialog();
         }
 
         private void tbxPlayerName_TextChanged(object sender, EventArgs e)
         {
-            btnPlay.Enabled = tbxPlayerName.Text != String.Empty ? true : false;
+            btnPlay.Enabled = tbxPlayerName.Text != String.Empty && Controller.Items.Count > 0 ? true : false;
+        }
+
+        private string ShowScores()
+        {
+            Controller.Scores.Sort(RPScore.sortAttempsAscending());
+            string scores = String.Empty;
+            foreach (RPScore s in Controller.Scores)
+            {
+                scores += String.Format("{0} : {1} essai(s) [{2}]", s.Player.Name, s.Attempts, s.Date) + Environment.NewLine;
+            }
+            return Controller.Scores.Count > 0 ? scores : String.Empty;
+        }
+
+        public void UpdateView()
+        {
+            tbxPlayerName.Clear();
+            lblScores.Text = ShowScores();
         }
     }
 }

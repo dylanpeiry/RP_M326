@@ -34,6 +34,7 @@
             this.btnPlay = new System.Windows.Forms.Button();
             this.pnlScores = new System.Windows.Forms.Panel();
             this.lblInfoScores = new System.Windows.Forms.Label();
+            this.lblScores = new System.Windows.Forms.Label();
             this.pnlScores.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +83,7 @@
             // pnlScores
             // 
             this.pnlScores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlScores.Controls.Add(this.lblScores);
             this.pnlScores.Controls.Add(this.lblInfoScores);
             this.pnlScores.Location = new System.Drawing.Point(160, -2);
             this.pnlScores.Name = "pnlScores";
@@ -97,6 +99,14 @@
             this.lblInfoScores.Size = new System.Drawing.Size(49, 15);
             this.lblInfoScores.TabIndex = 5;
             this.lblInfoScores.Text = "Scores";
+            // 
+            // lblScores
+            // 
+            this.lblScores.Location = new System.Drawing.Point(10, 28);
+            this.lblScores.Name = "lblScores";
+            this.lblScores.Size = new System.Drawing.Size(153, 274);
+            this.lblScores.TabIndex = 6;
+            this.lblScores.Text = "scores";
             // 
             // RPMainView
             // 
@@ -129,6 +139,7 @@
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Panel pnlScores;
         private System.Windows.Forms.Label lblInfoScores;
+        private System.Windows.Forms.Label lblScores;
     }
 }
 

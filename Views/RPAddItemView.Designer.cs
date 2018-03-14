@@ -51,6 +51,7 @@
             this.tbxPrice.Size = new System.Drawing.Size(228, 20);
             this.tbxPrice.TabIndex = 1;
             this.tbxPrice.TextChanged += new System.EventHandler(this.TextChanged_Custom);
+            this.tbxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrice_KeyPress);
             // 
             // lblName
             // 
